@@ -45,7 +45,6 @@ packaging==24.1
 pandas==2.2.2
 parso==0.8.4
 pillow==10.4.0
-pip==24.2
 platformdirs==4.2.2
 prompt_toolkit==3.0.47
 protobuf==5.28.0
@@ -57,7 +56,6 @@ Pygments==2.18.0
 pyparsing==3.1.4
 python-dateutil==2.9.0.post0
 pytz==2024.1
-pywin32==306
 PyYAML==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
