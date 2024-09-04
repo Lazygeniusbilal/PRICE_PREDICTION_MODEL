@@ -11,13 +11,13 @@ st.title('Insurance Premium Prediction')
 with open('lgbm_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-# Load the DataFrame from the pickle file
+# Load the feature names from the pickle file
 with open('top_10_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
 
-# Drop the latitude and longitude columns
+# List of features should be top_features
+# Drop the latitude and longitude columns from the input data, not top_features
 columns_to_drop = ['latitude', 'longitude']
-top_features = top_features.drop(columns=columns_to_drop, errors='ignore')
 
 # Define the function to predict
 def predict_premium(user_data):
@@ -39,6 +39,9 @@ for feature in top_features:
 # Convert input data to DataFrame
 user_df = pd.DataFrame([input_data])
 
+# Drop latitude and longitude if they exist
+user_df = user_df.drop(columns=columns_to_drop, errors='ignore')
+
 # Predict when button is pressed
 if st.sidebar.button('Predict Premium'):
     try:
@@ -47,5 +50,3 @@ if st.sidebar.button('Predict Premium'):
         st.write(f"Predicted Insurance Premium: ${premium:.2f}")
     except Exception as e:
         st.error(f"Error: {e}")
-
-
