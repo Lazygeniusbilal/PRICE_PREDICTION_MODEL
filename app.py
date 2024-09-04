@@ -15,9 +15,9 @@ with open('lgbm_model.pkl', 'rb') as file:
 with open('top_10_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
 
-# List of features should be top_features
-# Drop the latitude and longitude columns from the input data, not top_features
+# Exclude latitude and longitude from the top_features list
 columns_to_drop = ['latitude', 'longitude']
+top_features = [feature for feature in top_features if feature not in columns_to_drop]
 
 # Define the function to predict
 def predict_premium(user_data):
@@ -38,9 +38,6 @@ for feature in top_features:
 
 # Convert input data to DataFrame
 user_df = pd.DataFrame([input_data])
-
-# Drop latitude and longitude if they exist
-user_df = user_df.drop(columns=columns_to_drop, errors='ignore')
 
 # Predict when button is pressed
 if st.sidebar.button('Predict Premium'):
