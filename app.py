@@ -7,19 +7,16 @@ from lightgbm import LGBMRegressor
 # Streamlit interface
 st.title('Insurance Premium Prediction')
 
-# Load the model and features
+# Load the model
 with open('lgbm_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-# Load the feature names from the pickle file
-with open('top_10_features.pkl', 'rb') as file:
+# Load the top features without latitude and longitude
+with open('top_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
 
-# Exclude latitude and longitude from the top_features list
-columns_to_drop = ['latitude', 'longitude']
-top_features = [feature for feature in top_features if feature not in columns_to_drop]
 
-# Define the function to predict
+# Function to predict
 def predict_premium(user_data):
     # Ensure categorical columns are treated correctly
     for col in top_features:
