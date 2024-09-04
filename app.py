@@ -11,8 +11,13 @@ st.title('Insurance Premium Prediction')
 with open('lgbm_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+# Load the DataFrame from the pickle file
 with open('top_10_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
+
+# Drop the latitude and longitude columns
+columns_to_drop = ['latitude', 'longitude']
+top_features = top_features.drop(columns=columns_to_drop, errors='ignore')
 
 # Define the function to predict
 def predict_premium(user_data):
