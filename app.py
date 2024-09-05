@@ -4,13 +4,17 @@ import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
 # adding logo to web-app
-# Center the image using HTML
+# Center the image using st.image and Markdown for centering
+st.markdown("<h1 style='text-align: center;'>Athena Logo</h1>", unsafe_allow_html=True)
+st.image("Athena.png", width=150, use_column_width=False)
+
+# Center using CSS style in the Markdown block
 st.markdown(
     """
-    <div style='display: flex; justify-content: center;'>
-        <img src='/workspaces/PRICE_PREDICTION_MODEL/Athena.png' width='150'/>
-    </div>
-    """,
+    <style>
+    .element-container {text-align: center;}
+    </style>
+    """, 
     unsafe_allow_html=True
 )
 # Streamlit interface
