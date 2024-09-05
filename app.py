@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
 # adding logo to web-app
-st.image("athena.png", use_column_width=True)
+st.image("Athena.png", width=180)
 # Streamlit interface
 st.title('Insurance Premium Prediction')
 
@@ -31,7 +31,6 @@ def predict_premium(user_data):
     return prediction[0]
 
 # Collect user input in the sidebar
-st.sidebar.header('User Input')
 input_data = {}
 for feature in top_features:
     if feature == 'Construction Type':
