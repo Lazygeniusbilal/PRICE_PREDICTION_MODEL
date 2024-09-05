@@ -3,6 +3,8 @@ import pandas as pd
 import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
+# set the page title and favicon
+st.set_page_config(page_title="Insurance Premium Prediction", page_icon="Athena.png")
 # adding logo to web-app
 st.image("Athena.png", width=100)
 # Streamlit interface
