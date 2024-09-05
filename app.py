@@ -3,40 +3,6 @@ import pandas as pd
 import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
-# Apply custom theme using CSS
-st.markdown("""
-    <style>
-    /* Custom colors */
-    .css-1d391kg { /* Button styling */
-        background-color: #003366; /* Navy Blue */
-        color: #FFFFFF; /* White text */
-    }
-
-    .css-1dp5N4N { /* Header styling */
-        color: #003366; /* Navy Blue text */
-    }
-
-    /* Background colors */
-    .css-1v0mbdj { /* Main background */
-        background-color: #FFFFFF; /* White */
-    }
-    .css-1i5b9e8 { /* Sidebar background */
-        background-color: #F0F2F6; /* Light Grey */
-    }
-
-    /* Text color */
-    body {
-        color: #000000; /* Black text */
-        font-family: 'Arial', sans-serif; /* Default font */
-    }
-
-    /* Custom font from Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-    body {
-        font-family: 'Merriweather', serif;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 # set the page title and favicon
 st.set_page_config(page_title="Insurance Premium Prediction", page_icon="Athena.png")
