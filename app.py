@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
 # adding logo to web-app
-st.write("Athena.png", width=100)
+st.image("Athena.png", width=100)
 # Streamlit interface
 st.title('Insurance Premium Prediction')
 
