@@ -3,7 +3,8 @@ import pandas as pd
 import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
-
+# adding logo to web-app
+st.image("athena.png", use_column_width=True)
 # Streamlit interface
 st.title('Insurance Premium Prediction')
 
