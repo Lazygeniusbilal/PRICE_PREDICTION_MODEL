@@ -4,15 +4,8 @@ import pickle
 import numpy as np
 from lightgbm import LGBMRegressor
 # adding logo to web-app
-# Align the image to the top-left using HTML
-st.markdown(
-    """
-    <div style='text-align: left; position: relative; top: 0; left: 0;'>
-        <img src='Athena.png' width='150'/>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Display the logo in the top-left corner with st.image()
+st.image('Athena.png', width=150)
 # Streamlit interface
 st.title('Insurance Premium Prediction')
 
