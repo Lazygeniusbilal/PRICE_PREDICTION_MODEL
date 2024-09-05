@@ -15,6 +15,8 @@ with open('lgbm_model.pkl', 'rb') as file:
 with open('top_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
 
+# Define the categories for "Construction Type"
+construction_types = ['Wood', 'Brick', 'Concrete', 'Steel', 'Other']
 
 # Function to predict
 def predict_premium(user_data):
@@ -31,7 +33,10 @@ def predict_premium(user_data):
 st.sidebar.header('User Input')
 input_data = {}
 for feature in top_features:
-    input_data[feature] = st.sidebar.text_input(f"Enter value for {feature}")
+    if feature == 'Construction Type':
+        input_data[feature] = st.sidebar.selectbox(f"Select {feature}", construction_types)
+    else:
+        input_data[feature] = st.sidebar.text_input(f"{feature}")
 
 # Convert input data to DataFrame
 user_df = pd.DataFrame([input_data])
