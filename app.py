@@ -16,7 +16,7 @@ with open('top_features.pkl', 'rb') as file:
     top_features = pickle.load(file)
 
 # Define the categories for "Construction Type"
-construction_types = ['Wood', 'Brick', 'Concrete', 'Steel', 'Other']
+construction_types = ['Wood', 'Brick', 'Concrete']
 
 # Function to predict
 def predict_premium(user_data):
