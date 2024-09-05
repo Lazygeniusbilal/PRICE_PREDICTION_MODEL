@@ -8,7 +8,7 @@ from lightgbm import LGBMRegressor
 st.markdown(
     """
     <div style='display: flex; justify-content: center;'>
-        <img src='PRICE_PREDICTION_MODEL/Athena.png' width='150'/>
+        <img src='/workspaces/PRICE_PREDICTION_MODEL/Athena.png' width='150'/>
     </div>
     """,
     unsafe_allow_html=True
